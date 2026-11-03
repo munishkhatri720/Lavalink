@@ -1,0 +1,4 @@
+[submodule "lavaplayer"]
+	path = lavaplayer
+	url = https://github.com/munishkhatri720/lavaplayer
+	branch = ccr-029ed399-nkddb0

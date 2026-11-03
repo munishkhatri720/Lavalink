@@ -6,6 +6,18 @@ include(":plugin-api")
 
 project(":Lavalink-Server").projectDir = file("$rootDir/LavalinkServer")
 
+// lavaplayer is built from source: the munishkhatri720/lavaplayer fork, checked out as the
+// lavaplayer git submodule (git submodule update --init). Every dev.arbjerg lavaplayer
+// module below is replaced by the fork's project, whatever version the catalog names.
+includeBuild("lavaplayer") {
+    dependencySubstitution {
+        substitute(module("dev.arbjerg:lavaplayer")).using(project(":main"))
+        substitute(module("dev.arbjerg:lava-common")).using(project(":common"))
+        substitute(module("dev.arbjerg:lavaplayer-natives")).using(project(":natives-publish"))
+        substitute(module("dev.arbjerg:lavaplayer-ext-youtube-rotator")).using(project(":extensions-project:youtube-rotator"))
+    }
+}
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 dependencyResolutionManagement {

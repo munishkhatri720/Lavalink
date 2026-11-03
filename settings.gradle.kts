@@ -14,7 +14,7 @@ includeBuild("lavaplayer") {
         substitute(module("dev.arbjerg:lavaplayer")).using(project(":main"))
         substitute(module("dev.arbjerg:lava-common")).using(project(":common"))
         substitute(module("dev.arbjerg:lavaplayer-natives")).using(project(":natives-publish"))
-        substitute(module("dev.arbjerg:lavaplayer-ext-youtube-rotator")).using(project(":extensions-project:youtube-rotator"))
+        substitute(module("dev.arbjerg:lavaplayer-ext-youtube-rotator")).using(project(":extensions:youtube-rotator"))
     }
 }
 
